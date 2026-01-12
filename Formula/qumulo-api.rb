@@ -1,5 +1,5 @@
 class QumuloApi < Formula
-  include Language::PYTHON::Virtualenv
+  include Language::Python::Virtualenv
 
   desc "Python API for Qumulo Core REST API"
   homepage "https://pypi.org/project/qumulo-api/" 
