@@ -60,6 +60,12 @@ class QumuloApi < Formula
     # Generate shell completions for qq CLI
     generate_completions_from_executable(libexec/"bin/register-python-argcomplete", "qq",
                                          shell_parameter_format: :arg)
+
+    # Build an :all bottle by replacing hardcoded paths
+    site_packages = libexec/Language::Python.site_packages("python3")
+    inreplace site_packages/"argcomplete-#{resource("argcomplete").version}.dist-info/METADATA",
+              "/opt/homebrew/bin/bash",
+              "$HOMEBREW_PREFIX/bin/bash"
   end
 
   test do
