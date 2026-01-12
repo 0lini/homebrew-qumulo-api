@@ -55,7 +55,16 @@ class QumuloApi < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    # Create virtualenv
+    venv = virtualenv_create(libexec, "python3")
+    
+    # Install dependencies (resources) from source
+    venv.pip_install resources
+    
+    # Install the main package (wheel file) from the cached download
+    # The wheel file is downloaded to buildpath and needs to be installed directly
+    whl = buildpath.glob("*.whl").first
+    venv.pip_install_and_link whl
 
     # Generate shell completions for qq CLI
     generate_completions_from_executable(libexec/"bin/register-python-argcomplete", "qq",
