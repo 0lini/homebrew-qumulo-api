@@ -9,6 +9,11 @@ class QumuloApi < Formula
 
   depends_on "python@3.13"
 
+  resource "argcomplete" do
+    url "https://files.pythonhosted.org/packages/38/61/0b9ae6399dd4a58d8c1b1dc5a27d6f2808023d0b5dd3104bb99f45a33ff6/argcomplete-3.6.3.tar.gz"
+    sha256 "62e8ed4fd6a45864acc8235409461b72c9a28ee785a2011cc5eb78318786c89c"
+  end
+
   resource "marshmallow" do
     url "https://files.pythonhosted.org/packages/6d/30/14d8609f65c8aeddddd3181c06d2c9582da6278f063b27c910bbf9903441/marshmallow-3.23.1.tar.gz"
     sha256 "3a8dfda6edd8dcdbf216c0ede1d1e78d230a6dc9c5a088f58c4083b974a0d468"
@@ -51,6 +56,10 @@ class QumuloApi < Formula
 
   def install
     virtualenv_install_with_resources
+
+    # Generate shell completions for qq CLI
+    generate_completions_from_executable(libexec/"bin/register-python-argcomplete", "qq",
+                                         shell_parameter_format: :arg)
   end
 
   test do
