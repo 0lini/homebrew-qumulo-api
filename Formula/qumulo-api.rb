@@ -75,7 +75,7 @@ class QumuloApi < Formula
 
     # Generate shell completions for qq CLI
     generate_completions_from_executable(libexec/"bin/register-python-argcomplete", "qq",
-                                         shell_parameter_format: :arg)
+                                         base_name: "qq", shell_parameter_format: :arg)
 
     # Build an :all bottle by replacing hardcoded paths
     site_packages = libexec/Language::Python.site_packages("python3")
