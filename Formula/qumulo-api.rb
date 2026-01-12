@@ -63,8 +63,8 @@ class QumuloApi < Formula
     
     # Install the main package (wheel file) from the cached download
     # The wheel file is downloaded to buildpath and needs to be installed directly
-    whl = buildpath.glob("*.whl").first
-    raise "Wheel file not found in buildpath" if whl.nil?
+    whl = buildpath.glob("qumulo_api-*.whl").first
+    raise "qumulo-api wheel file not found in buildpath" if whl.nil?
     
     venv.pip_install_and_link whl
 
