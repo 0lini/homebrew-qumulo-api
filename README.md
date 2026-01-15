@@ -22,6 +22,12 @@ qq --version
 qq --help
 ```
 
+### Shell Autocompletion
+
+The `qq` tool supports shell autocompletion via [argcomplete](https://github.com/kislyuk/argcomplete). To enable autocompletion, add the following to your shell configuration:
+
+For more details on shell completion in Homebrew, see the [Shell Completion documentation](https://docs.brew.sh/Shell-Completion).
+
 ## What's Included
 
 This formula installs:
