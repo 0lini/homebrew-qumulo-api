@@ -36,7 +36,9 @@ This formula installs:
 
 ## Requirements
 
-- Python 3.13 (automatically installed as a dependency)
+- Homebrew installed on your system
+
+For installation instructions, see the [Homebrew Installation Guide](https://docs.brew.sh/Installation).
 
 ## Development
 
