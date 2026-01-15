@@ -69,12 +69,12 @@ class QumuloApi < Formula
   def install
     venv = virtualenv_create(libexec, "python3")
     venv.pip_install resources
-    whl = buildpath.glob("qumulo_api-7.7.3-py3-none-any.whl").first
+    whl = buildpath.glob("qumulo_api-#{version}-py3-none-any.whl").first
     venv.pip_install_and_link whl
   end
 
   test do
-    output = shell_output("#{bin}/qq --help")
-    assert_match "usage", output
+    output = shell_output("qq --version")
+    assert_match "qq #{version}", output
   end
 end
