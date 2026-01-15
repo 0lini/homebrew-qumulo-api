@@ -3,8 +3,8 @@ class QumuloApi < Formula
 
   desc "Python API for Qumulo Core REST API"
   homepage "https://pypi.org/project/qumulo-api/"
-  url "https://files.pythonhosted.org/packages/d3/43/cb66667f075c7d851ee38f199ca2b62dabc5d9184102a13b23a332d40da1/qumulo_api-7.7.3-py3-none-any.whl"
-  sha256 "eab9b488800a3bd82a862364bb1e98331601d8c88c1d3982be47bcdae9c3e64d"
+  url "https://files.pythonhosted.org/packages/2c/ba/634a93221ad82c89574f7ff82d9339ba8a8cf54ba865f15a3c6784554a81/qumulo_api-7.7.4-py3-none-any.whl"
+  sha256 "c835333ddaace5bb7ba2bee7cfc1da6825832a965748371b9fa4a169daac1200"
   license :cannot_represent
 
   livecheck do
