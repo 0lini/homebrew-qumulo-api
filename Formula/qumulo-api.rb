@@ -67,7 +67,10 @@ class QumuloApi < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3")
+    venv.pip_install resources
+    whl = buildpath.glob("qumulo_api-7.7.3-py3-none-any.whl").first
+    venv.pip_install_and_link whl
   end
 
   test do
