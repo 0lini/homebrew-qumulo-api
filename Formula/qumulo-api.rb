@@ -7,6 +7,8 @@ class QumuloApi < Formula
   sha256 "eab9b488800a3bd82a862364bb1e98331601d8c88c1d3982be47bcdae9c3e64d"
   license :cannot_represent
 
+  head "https://github.com/0lini/homebrew-qumulo-api.git", branch: "dev"
+
   livecheck do
     url "https://pypi.org/pypi/qumulo-api/json"
     strategy :json do |json|
