@@ -32,7 +32,7 @@ For more details on shell completion in Homebrew, see the [Shell Completion docu
 
 This formula installs:
 - **qumulo-api**: Python API for Qumulo Core REST API
-- All required dependencies (argcomplete, dataclasses-json, marshmallow, etc.)
+- All required dependencies
 
 ## Requirements
 
